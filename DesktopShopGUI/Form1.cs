@@ -1,6 +1,6 @@
 using ItemClassLibrary;
 
-namespace CarShopGUI
+namespace DesktopShopGUI
 {
     public partial class Form1 : Form
     {

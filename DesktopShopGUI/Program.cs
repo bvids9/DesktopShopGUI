@@ -1,4 +1,4 @@
-namespace CarShopGUI
+namespace DesktopShopGUI
 {
     internal static class Program
     {

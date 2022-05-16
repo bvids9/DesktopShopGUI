@@ -1,4 +1,4 @@
-﻿namespace CarShopGUI
+﻿namespace DesktopShopGUI
 {
     partial class Form1
     {

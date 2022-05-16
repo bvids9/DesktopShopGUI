@@ -25,7 +25,15 @@ namespace ItemClassLibrary
         {
             using (IDbConnection cnn = new SQLiteConnection(loadConnectionString()))
             {
-                cnn.Execute("insert into ProductTable (ItemName, ItemCategory, Price) values (@Item, @Category, @Price)", product);
+                cnn.Execute("insert into ProductTable (Item, Category, Price) values (@Item, @Category, @Price)", product);
+            }
+        }
+
+        public static void deleteProduct(Product product)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(loadConnectionString()))
+            {
+                cnn.Execute("delete from ProductTable where (Item=@Item)", product) ;
             }
         }
 

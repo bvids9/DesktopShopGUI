@@ -15,8 +15,6 @@ namespace CarShopGUI
         private void Form1_Load(object sender, EventArgs e)
         {
             // Inventory parameters
-            // Load from the database
-            myStore.ItemList = SqliteDataAccess.loadProducts();
             refresh_Lists();
 
         }
@@ -24,7 +22,8 @@ namespace CarShopGUI
         private void refresh_Lists()
         {
             // Function to refresh lists
-
+            // Refresh database list
+            myStore.ItemList = SqliteDataAccess.loadProducts();
             // Inventory list
             carInventoryBindingSource.DataSource = myStore.ItemList;
             lst_inventory.DataSource = carInventoryBindingSource;
@@ -61,8 +60,6 @@ namespace CarShopGUI
             refresh_Lists();
             // MessageBox.Show(c.ToString());
 
-
-
         }
 
         private void btn_addtocart_Click(object sender, EventArgs e)
@@ -84,6 +81,7 @@ namespace CarShopGUI
             lbl_price.Text = totalPrice.ToString("C");
 
             cartBindingSource.ResetBindings(false);
+
         }
 
         private void btn_cartremove_Click(object sender, EventArgs e)
@@ -93,6 +91,19 @@ namespace CarShopGUI
             {
                 myStore.ShoppingList.Remove(selected);
                 cartBindingSource.ResetBindings(false);
+            }
+        }
+
+        private void btn_deleteItem_Click(object sender, EventArgs e)
+        {
+            // Get the selected item from inventory
+            Product selected = lst_inventory.SelectedItem as Product;
+
+            // add to cart
+            if (selected != null)
+            {
+                SqliteDataAccess.deleteProduct(selected);
+                refresh_Lists();
             }
         }
     }

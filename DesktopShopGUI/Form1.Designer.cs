@@ -45,6 +45,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lbl_price = new System.Windows.Forms.Label();
             this.btn_cartremove = new System.Windows.Forms.Button();
+            this.btn_deleteItem = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -212,11 +213,22 @@
             this.btn_cartremove.UseVisualStyleBackColor = true;
             this.btn_cartremove.Click += new System.EventHandler(this.btn_cartremove_Click);
             // 
+            // btn_deleteItem
+            // 
+            this.btn_deleteItem.Location = new System.Drawing.Point(323, 418);
+            this.btn_deleteItem.Name = "btn_deleteItem";
+            this.btn_deleteItem.Size = new System.Drawing.Size(87, 23);
+            this.btn_deleteItem.TabIndex = 7;
+            this.btn_deleteItem.Text = "Delete";
+            this.btn_deleteItem.UseVisualStyleBackColor = true;
+            this.btn_deleteItem.Click += new System.EventHandler(this.btn_deleteItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btn_deleteItem);
             this.Controls.Add(this.btn_cartremove);
             this.Controls.Add(this.lbl_price);
             this.Controls.Add(this.label4);
@@ -256,5 +268,6 @@
         private Label label4;
         private Label lbl_price;
         private Button btn_cartremove;
+        private Button btn_deleteItem;
     }
 }

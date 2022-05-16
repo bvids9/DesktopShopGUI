@@ -19,10 +19,6 @@ namespace CarShopGUI
             myStore.ItemList = SqliteDataAccess.loadProducts();
             refresh_Lists();
 
-
-
-
-
         }
 
         private void refresh_Lists()
